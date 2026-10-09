@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taskly | Minha Lista de Tarefas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="cabecalho">
+            <div class="marca">
+                <div class="marca-icone">✓</div>
+                <span>taskly<span class="ponto">.</span></span>
+            </div>
+
+            <div class="data-atual" id="dataAtual"></div>
+        </header>
+
+        <section class="introducao">
+            <span class="etiqueta">SEU ESPAÇO DE PRODUTIVIDADE</span>
+
+            <h1>Um passo de cada vez<span>.</span></h1>
+
+            <p>Organize suas prioridades e transforme planos em realizações.</p>
+        </section>
+
+        <section class="painel">
+            <div class="painel-topo">
+                <div>
+                    <h2>Minhas tarefas</h2>
+                    <p id="mensagem">Vamos fazer acontecer?</p>
+                </div>
+
+                <div class="progresso-circulo" id="progresso">
+                    <span id="percentual">0%</span>
+                </div>
+            </div>
+
+            <form class="formulario" id="formTarefa">
+                <label class="campo-tarefa">
+                    <span class="sr-only">Nova tarefa</span>
+                    <span class="mais">＋</span>
+                    <input
+                        type="text"
+                        id="inputTarefa"
+                        placeholder="O que você precisa fazer?"
+                        maxlength="120"
+                        autocomplete="off"
+                        required
+                    >
+                </label>
+
+                <button type="submit" class="botao-adicionar">
+                    Adicionar <span>↗</span>
+                </button>
+            </form>
+
+            <div class="resumo">
+                <div class="resumo-item">
+                    <span class="resumo-numero" id="total">0</span>
+                    <span>Total</span>
+                </div>
+
+                <div class="resumo-item">
+                    <span class="resumo-numero" id="pendentes">0</span>
+                    <span>Pendentes</span>
+                </div>
+
+                <div class="resumo-item">
+                    <span class="resumo-numero destaque" id="concluidas">0</span>
+                    <span>Concluídas</span>
+                </div>
+            </div>
+
+            <div class="lista-topo">
+                <h3>Suas atividades</h3>
+
+                <label class="filtro">
+                    <span class="sr-only">Filtrar tarefas</span>
+                    <select id="filtroTarefas">
+                        <option value="todas">Todas</option>
+                        <option value="pendentes">Pendentes</option>
+                        <option value="concluidas">Concluídas</option>
+                    </select>
+                </label>
+            </div>
+
+            <ul id="listaTarefas" class="lista-tarefas"></ul>
+
+            <div id="estadoVazio" class="estado-vazio">
+                <div class="vazio-icone">✳</div>
+                <h3>Nenhuma tarefa por aqui</h3>
+                <p>Adicione uma tarefa e comece a organizar seu dia.</p>
+            </div>
+
+            <footer class="rodape-painel">
+                <span><span class="ponto-status"></span> Seu progresso, no seu ritmo.</span>
+                <button type="button" id="limparConcluidas">
+                    Limpar concluídas
+                </button>
+            </footer>
+        </section>
+
+        <footer class="rodape">
+            Feito com intenção. Um dia de cada vez.
+        </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+    
+</body>
+</html>
